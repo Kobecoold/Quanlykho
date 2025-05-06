@@ -1,13 +1,11 @@
-package com.quanlikho.quanlikho;
+package com.example.quanlikho;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class QuanlikhoApplicationTests {
-
-	@Test
-	void contextLoads() {
-	}
-
-}
+    @Test
+    void contextLoads() {
+    }
+} 
