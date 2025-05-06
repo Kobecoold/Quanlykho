@@ -29,7 +29,7 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-Ứng dụng sẽ chạy tại địa chỉ: http://localhost:8080/api
+Ứng dụng sẽ chạy tại địa chỉ: http://localhost:8081/api
 
 ## Tài khoản mặc định
 
