@@ -1,4 +1,4 @@
 package com.example.quanlikho.service;
 
-public class PalletService {
+public class Service {
 }

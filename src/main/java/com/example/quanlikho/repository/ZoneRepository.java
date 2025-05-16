@@ -1,4 +1,4 @@
 package com.example.quanlikho.repository;
 
-public class PalletRepository {
+public class ZoneRepository {
 }
