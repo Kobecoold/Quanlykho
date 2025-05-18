@@ -1,7 +1,6 @@
 package com.example.quanlikho.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,15 +11,15 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Table(name = "pallets")
-public class Pallet {
+@Table(name = "bins")
+public class Bin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String palletCode;
+    private String binCode;
 
     private double maxWeight;
 
@@ -28,13 +27,13 @@ public class Pallet {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "shelf_id")
-    @JsonBackReference(value = "shelf-pallet")
+    @JsonBackReference(value = "shelf-bin")
     private Shelf shelf;
 
     @ManyToMany
     @JoinTable(
-            name = "pallet_products",
-            joinColumns = @JoinColumn(name = "pallet_id"),
+            name = "bin_products",
+            joinColumns = @JoinColumn(name = "bin_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id")
     )
     private List<Product> products = new ArrayList<>();
