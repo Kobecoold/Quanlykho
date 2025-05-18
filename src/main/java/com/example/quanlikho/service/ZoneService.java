@@ -1,4 +1,4 @@
 package com.example.quanlikho.service;
 
-public class ShelfService {
+public class ZoneService {
 }
