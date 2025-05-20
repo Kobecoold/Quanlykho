@@ -17,16 +17,36 @@ public class Product {
     @Column(nullable = false)
     private String name;
 
-    private String description;
+    @Column(nullable = false)
+    private String code;
 
-    @Column(nullable = false, unique = true)
-    private String sku; // Mã sản phẩm
+    @Column(nullable = false)
+    private BigDecimal price;
+
+    private String description;
 
     @Column(nullable = false)
     private Integer quantity;
 
-    @Column(nullable = false)
-    private BigDecimal price;
+    @Column(name = "created_at")
+    private java.time.LocalDateTime createdAt;
+
+    @Column(name = "updated_at")
+    private java.time.LocalDateTime updatedAt;
+
+    @PrePersist
+    protected void onCreate() {
+        createdAt = java.time.LocalDateTime.now();
+        updatedAt = java.time.LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = java.time.LocalDateTime.now();
+    }
+
+    @Column(nullable = false, unique = true)
+    private String sku; // Mã sản phẩm
 
     private String unit; // Đơn vị tính
 
