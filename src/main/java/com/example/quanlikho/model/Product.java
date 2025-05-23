@@ -58,4 +58,8 @@ public class Product {
     private Integer minQuantity; // Số lượng tối thiểu cần duy trì trong kho
 
     private boolean active = true;
+
+    @ManyToOne
+    @JoinColumn(name = "warehouse_id")
+    private Warehouse warehouse;
 } 
